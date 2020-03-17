@@ -1,6 +1,6 @@
 import json
 import requests
-from classes.Movie import Movie
+from Movie import Movie
 
 URL = 'http://omdbapi.com/'
 

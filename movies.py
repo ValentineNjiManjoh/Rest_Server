@@ -1,11 +1,11 @@
 #CLI app fetching data from OMDb API and storing in local sqlite database
 import argparse
 
-from classes.HelperClass import Parser, \
+from HelperClass import Parser, \
     Highscore, CompareAwards, CompareNumeric
-from classes.DB import DB
-from classes.OMDBapi import OMDBapi
-from classes.Printer import PrintFiltered, PrintHighscores
+from DB import DB
+from OMDBapi import OMDBapi
+from Printer import PrintFiltered, PrintHighscores
 
 
 class Main():
