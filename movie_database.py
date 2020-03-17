@@ -4,10 +4,15 @@ import json
 
 from omdb import OMDBClient
 
-client = OMDBClient(apikey=API_KEY)
+
+# if using the module level client
+omdb.set_default('apikey', API_KEY)
+
+# if creating a new client instance
+client = omdb.OMDBClient(apikey=API_KEY)
 
 # omdb.<method>
-
+from omdbapi.movie_search import GetMovie
 
 #Get API key from OMDB website: http://www.omdbapi.com/apikey.aspx
 #My key http://www.omdbapi.com/?i=tt3896198&apikey=dc626e14
