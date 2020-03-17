@@ -1,6 +1,12 @@
 import urllib.request, urllib.parse, urllib.error
+import omdb
 import json
 
+from omdb import OMDBClient
+
+client = OMDBClient(apikey=API_KEY)
+
+# omdb.<method>
 
 
 #Get API key from OMDB website: http://www.omdbapi.com/apikey.aspx
