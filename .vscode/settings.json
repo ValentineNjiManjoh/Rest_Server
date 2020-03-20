@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "C:\\Users\\grane\\AppData\\Local\\Programs\\Python\\Python38\\python.exe"
+    "python.pythonPath": "C:\\Users\\Hemma\\.platformio\\penv\\Scripts\\python.exe",
+    "python.envFile": "${workspaceRoot}/.env"
 }
