@@ -1,6 +1,6 @@
 import json
 import requests
-from Movie import Movie
+from omdb_rest.Movie import Movie
 
 URL = 'http://omdbapi.com/'
 
@@ -68,7 +68,7 @@ class OMDBapi():
         cursor = self.db.get_imdb_rating(movies[0], movies[1])
         return cursor.fetchall()
 
-    def get_filtered_by(self, filter, value):
+    def get_filtered_by(self, Filter, value):
         cursor = self.db.get_filtered_by(filter, value)
         return cursor.fetchall()
 

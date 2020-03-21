@@ -1,12 +1,15 @@
 #CLI app fetching data from OMDb API and storing in local sqlite database
 import argparse
 
-from HelperClass import Parser, \
-    Highscore, CompareAwards, CompareNumeric
-from DB import DB
-from OMDBapi import OMDBapi
-from Printer import PrintFiltered, PrintHighscores
+from omdb_rest.HelperClass import Parser, Highscore, CompareAwards, CompareNumeric
+from omdb_rest.Printer import PrintFiltered, PrintHighscores
 
+
+#from HelperClass import Parser, Highscore, CompareAwards, CompareNumeric
+    
+from omdb_rest.DB import DB
+from omdb_rest.OMDBapi import OMDBapi
+#from Printer import PrintFiltered, PrintHighscores
 
 class Main():
     def __init__(self):
@@ -78,35 +81,35 @@ class Main():
             if list(args.filter_by) == [] or args.filter_by[0] not in choices:
                 print(f"usage: movies.py [-f] filter - choose from: {choices}")
 
-            filter = args.filter_by[0]
+            Filter = args.filter_by[0]
             if args.filter_by[0] not in ['nominated', 'awarded', 'earned']:
                 value = args.filter_by[1]
             else:
                 value = ''
 
-            if filter == 'director':
+            if Filter == 'director':
                 columns = ('Title', filter)
-                data = repo.get_filtered_by(filter, value)
+                data = repo.get_filtered_by(Filter, value)
                 PrintFiltered(data).print(columns, data)
 
-            if filter == 'actor':
-                columns = ('Title', filter)
-                filter = 'movies.cast'
-                data = repo.get_filtered_by(filter, value)
+            if Filter == 'actor':
+                columns = ('Title', Filter)
+                Filter = 'movies.cast'
+                data = repo.get_filtered_by(Filter, value)
                 PrintFiltered(data).print(columns, data)
 
-            if filter == 'language':
-                columns = ('Title', filter)
-                data = repo.get_filtered_by(filter, value)
+            if Filter == 'language':
+                columns = ('Title', Filter)
+                data = repo.get_filtered_by(Filter, value)
                 PrintFiltered(data).print(columns, data)
 
-            if filter == 'nominated':
-                columns = ('Title', filter)
+            if Filter == 'nominated':
+                columns = ('Title', Filter)
                 data = repo.get_nominated()
                 PrintFiltered(data).print(columns, data)
 
-            if filter == 'awarded':
-                columns = ('Title', filter)
+            if Filter == 'awarded':
+                columns = ('Title', Filter)
                 data = repo.get_awarded()
                 awarded = []
                 for movie in data:
@@ -116,8 +119,8 @@ class Main():
                         awarded.append(movie)
                 PrintFiltered(awarded).print(columns, awarded)
 
-            if filter == 'earned':
-                columns = ('Title', filter)
+            if Filter == 'earned':
+                columns = ('Title', Filter)
                 data = repo.get_earned()
                 PrintFiltered(data).print(columns, data)
 
