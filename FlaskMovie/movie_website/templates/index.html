@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rest Movie</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: black;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .movie-card {
+            width: 300px;
+            height: auto;
+            background: white;
+            padding: 12px;
+            align-self: center;
+            border-radius: 2px;
+            box-shadow: 2px 2px 4px #867475;
+            margin: 12px;
+        }
+
+        .movie-list-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        img {
+            max-width: 100%;
+        }
+    </style>
+
+    <section>
+        <div class="movie-list-container">
+            {% for movie in data %}
+            <div class="movie-card">
+                <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" class="movie-poster">
+                <h2>{{movie.title}}</h2>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</body>
+
+</html>
