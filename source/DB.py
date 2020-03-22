@@ -89,12 +89,12 @@ class DB:
             from movies where movies.cast like ?", param
         )
 
-    def get_filtered_by(self, filter, value):
+    def get_filtered_by(self, Filter, value):
         """ Gets movies filtered by given value """
         params = ('%'+value+'%', )
         return self.cursor.execute(
-            f"select title, {filter} \
-            from movies where {filter} like ?", params
+            f"select title, {Filter} \
+            from movies where {Filter} like ?", params
         )
 
     def get_oscar_nominated(self):

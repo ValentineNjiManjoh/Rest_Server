@@ -1,0 +1,22 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>home</title>  
+</head>  
+<body>
+ 
+<a href = "{{ url_for('login') }}">login</a>    
+    <h2>Hi, Welcome our REST_DATA </h2>  
+    <a href="/add">Add Movie</a><br><br>  
+    <a href ="/view">Get Movie</a><br><br>  
+    <a href="/delete">Delete Movie</a><br><br> 
+{% with messages = get_flashed_messages() %}  
+         {% if messages %}  
+               {% for message in messages %}  
+                    <p>{{ message }}</p>  
+               {% endfor %}  
+         {% endif %}  
+      {% endwith %}  
+	
+</body>  
+</html>  

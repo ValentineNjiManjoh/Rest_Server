@@ -1,0 +1,54 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>List</title>  
+</head>  
+<body>  
+  
+<h3>Employee Information</h3>  
+<table border=5>  
+    <thead>  
+        <td>ID</td>  
+        <td>Title</td>  
+        <td>Year</td>  
+        <td>Tuntime</td>  
+        <td>Genre</td>
+        <td>Director</td>
+        <td>Actors</td>
+        <td>Writer</td>
+        <td>Language</td>
+        <td>Awards</td>
+        <td>IMDB Rating</td>
+        <td>IMDB Votes</td>
+        <td>Box office</td>
+
+    
+    
+    </thead>  
+      
+    {% for row in rows %}  
+      
+        <tr>  
+            <td>{{row["ID"]}}</td>  
+            <td>{{row["title"]}}</td>  
+            <td>{{row["year"]}}</td>  
+            <td>{{row["runtime"]}}</td>  
+            <td>{{row["genre"]}}</td> 
+            <td>{{row["director"]}}</td> 
+            <td>{{row["cast"]}}</td> 
+            <td>{{row["writer"]}}</td> 
+            <td>{{row["language"]}}</td> 
+            <td>{{row["awards"]}}</td> 
+            <td>{{row["imdb_rating"]}}</td> 
+            <td>{{row["imdb_votes"]}}</td> 
+            <td>{{row["box_office"]}}</td> 
+        </tr>  
+      
+    {% endfor %}  
+</table>  
+<br><br>  
+  
+<a href="/">Go back to home page</a>  
+  
+</body>  
+</html>  
