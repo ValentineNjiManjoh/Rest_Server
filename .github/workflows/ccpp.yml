@@ -13,8 +13,6 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
-    - name: configure
-      run: ./configure
     - name: Setup Python
       uses: actions/setup-python@v1.2.0
     # Version range or exact version of a Python version to use, using SemVer's version range syntax.
