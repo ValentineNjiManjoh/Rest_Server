@@ -23,6 +23,5 @@ jobs:
       
     - name: make check
       run: make check
-          echo -e 'titanic'
-          echo -e 'no\n'
-          echo -e 'no\n'
+          echo -e 'titanic\nno\nno'
+
