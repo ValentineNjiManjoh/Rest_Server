@@ -149,6 +149,7 @@ def search_movie(title):
             save_database_yes_no=input ('Save the movie info in a local database? Enter "yes" or "no": ').lower()
             if save_database_yes_no=='yes':
                 save_in_database(json_data)
+            return 1
         else:
             print("Error encountered: ",json_data['Error'])
     
