@@ -3,3 +3,4 @@ Pandas
 requests
 BeautifulSoup4
 MatplotLib
+IPython

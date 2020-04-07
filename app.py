@@ -4,6 +4,7 @@ import os
 import sqlite3
 
 
+
 #Get API key
 with open('APIkeys.json') as f:
     keys = json.load(f)
@@ -164,8 +165,8 @@ else:
     search_movie(title)     
     
 #Show the downloaded poster of ''
-from IPython.display import Image
-Image("Posters/Titanic.jpg")       
+#J
+#Image("Posters/Titanic.jpg")       
 
 #Print the content of the local database
 print_database('movies.sqlite')
